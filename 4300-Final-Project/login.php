@@ -20,6 +20,19 @@ try {
 
 <!DOCTYPE html>
 <html>
+<head>
+<script>
+function validateForm() {
+  var a = document.forms["login"]["username"].value;
+  var b = document.forms["login"]["password"].value;
+  if (a == "" || a == null || b == "" || b == null) {
+    alert("All fields must be filled out");
+    return false;
+  }
+ 
+}
+</script>
+</head>
 
 <body>
 
@@ -28,7 +41,7 @@ try {
 </div>
 
 
-<form class="container" action="checkLogin2.php" method="POST">
+<form name = "login" class="container" action="checkLogin2.php" onsubmit="return validateForm()" method="POST" required>
 
 <p class="signup"> Login</p>
 

@@ -45,12 +45,19 @@ function validateForm() {
 
 <input type="text" id="password" name="password" placeholder="Type password" class="input">
 
-<p class="forgotPass"><a href="default.asp">Forgot Password</a></p>
-
-
 <button type="submit" name="submit" class="button">Login</button>
 
-<p class="notMember"><a href="register.php">Create an account</a></p>
+<div class = "linksBox">
+
+<p><a href="register.php">Create an account </a></p>
+
+<div class= "vertical"></div>
+
+<p><a href="default.asp"> Forgot Password?</a></p>
+
+
+
+</div>
 
 </form>
 
@@ -82,18 +89,14 @@ font-weight: bold;
 }
 
 .container {
-
-
 margin: 0 auto;
-max-width: 600px;
+max-width: 500px;
 height: 400px;
 padding: 16px;
 background-color: white;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
-
-
 
 .input {
 width: 50%;
@@ -104,9 +107,9 @@ margin-top: 30px;
 margin-bottom: 2px;
 background-color: #fafafa;
 border:0;
-box-shadow:0 0 4px rgba(0,0,0,0.3);
+box-shadow:0 2px 4px rgba(0,0,0,0.3);
 transition: .3s box-shadow;
-
+border-radius:10px;
 }
 
 .input:hover {
@@ -116,15 +119,15 @@ transition: .3s box-shadow;
 .button {
 
 border-radius: 25px;
-background-color: #c98434 ;
+background-color: #00b25c ;
 color: white;
 padding: 16px 20px;
 border: none;
 display: block;
 margin: 0 auto;
-margin-top: 50px;
+margin-top: 30px;
 cursor: pointer;
-width: 30%;
+width: 50%;
 height: 50px;
 text-align: center;
 font-family: 'Helvetica', 'Arial', sans-serif;
@@ -132,14 +135,43 @@ font-size: 18px;
 
 }
 
-.forgotPass {
-
-  margin-left: 44%;
-  margin-bottom: 20px;
-  font-size: 11px;
+.button:hover {
+  box-shadow:0 0 5px rgba(0,0,0,0.5);
 }
 
 
+.linksBox {
+  text-align: center;
+  margin-left: 29%;
+  display: flex;
+  font-size: 12px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+a:link {
+  color: #6b6b6b;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #6b6b6b;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #6b6b6b;
+  text-decoration: underline;
+}
+
+.vertical {
+            border-left: 1px solid #b5b5b5;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 </style>
 </head>
 

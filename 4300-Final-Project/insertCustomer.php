@@ -44,10 +44,9 @@ try {
 
 $statement -> closeCursor();
      
+  header("location:home.php");
   
     
-
-   #link to homepage/confirmation
   
 
   }

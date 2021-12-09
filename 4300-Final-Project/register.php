@@ -5,9 +5,9 @@ $username='eliza';
 $password='password';
 
 try {
-    echo 'Attempting Connection';
+    
     $db=new PDO($dsn, $username,$password);
-    echo 'Connected successfully';
+    
     }
     catch (PDOException  $e)
     {
@@ -28,31 +28,23 @@ try {
 </head>
 <body>
 
-
-<div class="header">
-  <h1>Login</h1>
-</div>
-
-
 <form action="insertCustomer.php" class="container" method="POST">
  
     <p class="signup"> Sign Up</p>
 
-  <input type="text" name="firstName" placeholder="Enter First name">
+  <input type="text" name="firstName" placeholder="Enter First name" class="input">
   
+  <input type="text" id="lastName" name="lastName" placeholder="Enter last name" class="input"> 
   
+  <input type="text" id="email" name="email" placeholder="Enter email" class="input">
   
-  <input type="text" id="lastName" name="lastName" placeholder="Enter last name"> 
-  
-  <input type="text" id="email" name="email" placeholder="Enter email">
-  
- <input type="text" id="password" name="password" placeholder="Enter password">
- <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number">
+ <input type="text" id="password" name="password" placeholder="Enter password" class="input">
+
+ <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" class="input">
 
  <p class="links"><span style="color:black; font-weight: lighter"> Already a Member?</span> <a href="login.html">Login Here</a></p> 
-
-
-  <input type="Submit" name="Submit1" value="Login" class="login">
+ 
+  <input type="Submit" name="Submit1" value="Sign Up" class="login">
 </form>
 
 
@@ -64,6 +56,9 @@ try {
 <head>
 <style>
 
+body {
+  background-color: #f0f0f0; 
+}
 
 .header {
 
@@ -74,13 +69,29 @@ try {
   margin-bottom: 60px;
 }
 
+.input {
+width: 50%;
+padding: 16px 20px;
+display: block;
+margin: 0 auto;
+margin-top: 30px;
+margin-bottom: 2px;
+background-color: #fafafa;
+border:0;
+box-shadow:0 2px 4px rgba(0,0,0,0.3);
+transition: .3s box-shadow;
+border-radius:10px;
+}
+
+.input:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
 
 .container {
   
-  
   margin: 0 auto;
   max-width: 600px;
-  height: 480px;
+  height: 600px;
   padding: 16px;
   background-color: #ece9f0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -89,47 +100,43 @@ try {
 
 .signup {
 
-    text-align: center;
-    font-size: 30px;
-    
-
-}
-
-input[type = text] {
-  border-radius: 15px;
-  height: 9%;
-  width: 50%;
-  padding: 16px 20px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 2px;
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
+text-align: center;
+font-size: 40px;
+font-family: 'Helvetica', 'Arial', sans-serif;
+color: black;
+font-weight: bold;
 
 }
 
 .login {
 
-  border-radius: 25px;
-  background-color: #c98434 ;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  display: block;
-  margin: 0 auto;
-  margin-top: 50px 0px 40px 0px;
+border-radius: 25px;
+background-color: #00b25c ;
+color: white;
+padding: 16px 20px;
+border: none;
+display: block;
+margin: 0 auto;
+margin-top: 20px;
+cursor: pointer;
+width: 50%;
+height: 50px;
+text-align: center;
+font-family: 'Helvetica', 'Arial', sans-serif;
+font-size: 18px;
+
  
-  cursor: pointer;
-  width: 30%;
- 
+}
+.login:hover {
+  box-shadow:0 0 5px rgba(0,0,0,0.5);
 }
 
 .links{
 
 text-align: center;
-font-size: 14px;
-margin-top: 3px;
+font-size: 12px;
+margin-top: 20px;
+font-family: 'Helvetica', 'Arial', sans-serif;
 
 }
     
@@ -143,6 +150,4 @@ a.one:visited {color:black;}
 
 </style>
 </head>
-
-
 

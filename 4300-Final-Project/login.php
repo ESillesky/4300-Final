@@ -36,75 +36,81 @@ function validateForm() {
 
 <body>
 
-<div class="header">
-<h1>Login</h1>
-</div>
-
-
+<div class="box">
 <form name = "login" class="container" action="checkLogin2.php" onsubmit="return validateForm()" method="POST" required>
 
-<p class="signup"> Login</p>
+<p class="signup"> Sign In</p>
 
-<input type="text" id="username" name="username" placeholder="Type username">
+<input type="text" id="username" name="username" placeholder="Type username" class="input">
 
-<input type="text" id="password" name="password" placeholder="Type password">
+<input type="text" id="password" name="password" placeholder="Type password" class="input">
 
 <p class="forgotPass"><a href="default.asp">Forgot Password</a></p>
 
 
 <button type="submit" name="submit" class="button">Login</button>
+
+<p class="notMember"><a href="register.php">Create an account</a></p>
+
 </form>
 
-
+</div> 
 
 </body>
 
 <head>
 <style>
 
+body {
+  background-color: #f0f0f0; 
+}
 .signup {
 
 text-align: center;
-font-size: 30px;
-
-
-}
-
-.header {
-
-text-align: center;
-color: white;
-font-family: Marker Felt, fantasy;
 font-size: 40px;
-margin-bottom: 60px;
+font-family: 'Helvetica', 'Arial', sans-serif;
+color: black;
+font-weight: bold;
+
 }
 
+
+.notMember {
+  text-align: center;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 14px;
+}
 
 .container {
 
 
 margin: 0 auto;
 max-width: 600px;
-height: 300px;
+height: 400px;
 padding: 16px;
-background-color: #ece9f0;
+background-color: white;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
 
 
-input[type = text] {
-border-radius: 15px;
+.input {
 width: 50%;
 padding: 16px 20px;
 display: block;
 margin: 0 auto;
 margin-top: 30px;
 margin-bottom: 2px;
-box-sizing: border-box;
-box-shadow: .5px .5px;
+background-color: #fafafa;
+border:0;
+box-shadow:0 0 4px rgba(0,0,0,0.3);
+transition: .3s box-shadow;
 
+}
+
+.input:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
 }
 
 .button {
@@ -119,6 +125,10 @@ margin: 0 auto;
 margin-top: 50px;
 cursor: pointer;
 width: 30%;
+height: 50px;
+text-align: center;
+font-family: 'Helvetica', 'Arial', sans-serif;
+font-size: 18px;
 
 }
 

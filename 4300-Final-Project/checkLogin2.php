@@ -52,6 +52,11 @@ $password='password';
                          $isAdmin = $publisher['isAdmin'];
                     }
                    }
+                   function function_alert($message) {
+      
+                    // Display the alert box 
+                    echo "<script>alert('$message');</script>";
+                }
 
                    echo($isAdmin);
 
@@ -69,8 +74,8 @@ $password='password';
                    }  
                    else  
                    {  
-                        $message = '<label>Wrong Data</label>';
-                        echo($message);
+                    function_alert("Invalid username or password.");
+                    header("location:login.php"); 
                    }  
               }  
           }
@@ -82,3 +87,4 @@ $password='password';
           exit();
        }
 ?>   
+

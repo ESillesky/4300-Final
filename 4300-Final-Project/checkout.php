@@ -36,6 +36,23 @@ catch (PDOException  $e){
 
 <!DOCTYPE html>
 <html>
+  <head>
+  <script>
+function validateForm() {
+  var a = document.forms["checkout"]["nameOnCard"].value;
+  var b = document.forms["checkout"]["cardNumber"].value;
+  var c = document.forms["checkout"]["expMonth"].value;
+  var d = document.forms["checkout"]["expYear"].value;
+  var e = document.forms["checkout"]["cvv"].value;
+  
+  if (a == "" || a == null || b == "" || b == null || c == "" || c == null || d == "" || d == null || e == "" || e == null) {
+    alert("All fields must be filled out");
+    return false;
+  }
+ 
+}
+</script>
+</head>
 
 <body>
   <div class="mainCont">
@@ -46,18 +63,18 @@ catch (PDOException  $e){
         </div>
       </div>
 
-      <form class="container" action="insertPayment.php" method="POST">
+      <form name ="checkout" class="container" action="insertPayment.php" method="POST"onsubmit="return validateForm()" required>
       
           <p class="billingInfo"> Payment Info</p>
 
-        <input type="name" id="nameOnCard" name="nameOnCard" placeholder="Name">
-        <input type="card" id="cardNumber" name="cardNumber" placeholder="Card Number">
+        <input type="name" id="nameOnCard" name="nameOnCard" placeholder="Name" class="name">
+        <input type="card" id="cardNumber" name="cardNumber" placeholder="Card Number"class="card">
 
         <table>
           <tr>
-          <th><input type="month" id="expMonth" name="expMonth" placeholder="Expiration Month"></th>
-          <th><input type="year" id="expYear" name="expYear" placeholder="Expiration Year"></th>
-          <th><input type="text" id="cvv" name="cvv" placeholder="CVV"></th>
+          <th><input type="month" id="expMonth" name="expMonth" placeholder="Expiration Month" class="month"></th>
+          <th><input type="year" id="expYear" name="expYear" placeholder="Expiration Year"class="year"></th>
+          <th><input type="text" id="cvv" name="cvv" placeholder="CVV"class="cvv"></th>
           
           </tr>
           
@@ -252,76 +269,95 @@ a:hover {
   text-decoration: underline;
 }
 
-input[type=card] {
-  border: 1px solid #555;
+.card {
+  border:0;
+  background-color: #fafafa;
   height: 40px;
   width: 600px;
-  padding: 16px 20px;
+  padding: 2px 6px;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 2px;
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
-
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  transition: .4s box-shadow;
+  border-radius:5px;
+  border: 1px solid #555
 }
 
-input[type=name] {
-  border: 1px solid #555;
+.card:hover, .name:hover, .month:hover, .year:hover, .cvv:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
+
+
+
+.name {
+  border:0;
+  background-color: #fafafa;
   height: 40px;
   width: 600px;
-  padding: 16px 20px;
+  padding: 2px 6px;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 2px;
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  transition: .4s box-shadow;
+  border-radius:5px;
+  border: 1px solid #555
 
 }
 
-input[type=month] {
+.month {
   border: 1px solid #555;
   height: 40px;
   width: 135px;
-  padding: 16px 20px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 2px;
-  margin-left: 190px;
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
-
-}
-
-input[type=year] {
-  border: 1px solid #555;
-  height: 40px;
-  width: 135px;
-  padding: 16px 20px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 2px;
   margin-left: 40px;
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
+  background-color: #fafafa;
+  padding: 2px 6px;
+  display: block;
+  margin-left:150px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  transition: .4s box-shadow;
+  border-radius:5px;
+  
 
 }
-input[type = text] {
+
+.year {
+
   border: 1px solid #555;
   height: 40px;
   width: 135px;
-  padding: 16px 20px;
+  margin-left: 40px;
+  background-color: #fafafa;
+  padding: 2px 6px;
   display: block;
-  margin: 0 auto;
+  margin-left:40px;
   margin-top: 20px;
   margin-bottom: 2px;
-  margin-left: 40px;
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  transition: .4s box-shadow;
+  border-radius:5px;
+  
 
-  box-sizing: border-box;
-  box-shadow: .5px .5px;
+}
+.cvv {
+  border: 1px solid #555;
+  height: 40px;
+  width: 135px;
+  margin-left: 40px;
+  background-color: #fafafa;
+  padding: 2px 6px;
+  display: block;
+  margin-left:40px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  box-shadow:0 4px 5px rgba(0,0,0,0.3);
+  transition: .4s box-shadow;
+  border-radius:5px;
 
 }
 
@@ -357,6 +393,10 @@ margin-top: 3px;
     margin-top:10px;
     color: #4d4c4c;
     display:flex;
+}
+
+.button:hover {
+  box-shadow:0 0 5px rgba(0,0,0,0.5);
 }
 
 

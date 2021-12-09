@@ -1,0 +1,23 @@
+
+
+.image {
+    padding-left: 300px;
+}
+
+.infoByImage {
+    float:right;
+    padding-right: 300px;
+    font-size:60px;
+
+}
+
+.date {
+    float:right;
+    font-size:20px;
+    padding-right: 400px;
+   
+}
+
+.search {
+    
+}

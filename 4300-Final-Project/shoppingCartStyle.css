@@ -1,0 +1,14 @@
+box {
+
+    height: 225px;
+    width: 75%;
+    margin:auto;
+    background-color: #e1e4eb;
+    box-shadow: 5px 5px 5px rgb(155, 155, 155); ;
+    }
+    
+    image {
+    
+    margin-left: 60px;
+    font-size: 80px;
+    }

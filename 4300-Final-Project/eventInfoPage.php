@@ -39,37 +39,36 @@ catch (PDOException  $e)
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
+<div class="ticket">
+  <img class="image">
+    <?php
+      echo '<img src="localImages/' . $event['myImage'] . '" width="300" height="450">';
+    ?>
+  </img>
 
-<div class ="container">
-  <div class="image">
-        <?php
-            echo '<img src="localImages/' . $event['myImage'] . '" width="300" height="450">';
-        ?>
-         <div class="infoByImage">
-            <p> 
-              <?php
-                echo $eventName;
-              ?>
+  <h1> 
+    <?php
+     echo $eventName;
+    ?>
+  </h1>   
 
-            <p>   
+  <h3>
+    <?php
+      echo 'Date: ' . $eventDate;
+    ?>
+  </h3>
 
-            <p class="date">
-                <?php
-                    echo 'Date: ' . $eventDate;
-                ?>
-                </p>
-
-                <p class="date">
-                <?php
-                    echo 'Price: $' . $eventPrice;
-                ?>
-                </p>
-
-        </div>
+  <span class="price">
+    <?php
+      echo 'Price: $' . $eventPrice;
+    ?>
+  </span>
     
-        <label for="Quantity_ticket">Number of Tickets:</label>   
+  <br>
+  <br>
+    
+  <label for="Quantity_ticket">Number of Tickets:</label>   
             <select name="quantity" id="quantity-field">
             <option value=1 selected>1</option>
             <option value=2>2</option>
@@ -80,20 +79,19 @@ catch (PDOException  $e)
   </div>
 </div>
  
-<script>
+   <script>
 
-function addToCart(){
-    var quantityField = document.getElementById('quantity-field');
-    var quantity = quantityField.value;
-    spge = '<?php echo $id ;?>';
+   function addToCart(){
+           var quantityField = document.getElementById('quantity-field');
+           var quantity = quantityField.value;
+           spge = '<?php echo $id ;?>';
 
 // then
-
     window.location.href = "http://192.168.64.5/4300-Final-Project/shoppingCart.php?quantity="+quantity+"&link=" + spge;
-}
+   }
 
-    </script>
-  
+   </script>
+</div>
 
 </body>
 </html>
